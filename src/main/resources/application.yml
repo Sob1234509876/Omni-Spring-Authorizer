@@ -1,0 +1,13 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 20000
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/
+    username: root
+    # noinspection SpellCheckingInspection
+    password: "!QAZxsw2#EDC"
+    driver-class-name: com.mysql.cj.jdbc.Driver

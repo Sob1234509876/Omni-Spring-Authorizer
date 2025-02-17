@@ -1,0 +1,40 @@
+//file:noinspection VulnerableLibrariesLocal
+plugins {
+    id 'java'
+    id 'application'
+    id 'maven-publish'
+
+    id 'org.springframework.boot' version '3.4.2'
+}
+
+group = 'top.sob'
+version = '1.0a'
+
+repositories {
+    maven { url = uri('https://maven.aliyun.com/repository/central') }
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    testImplementation libs.junit.jupiter
+
+    implementation libs.spring.boot.web, libs.spring.boot.data.jdbc, libs.spring.boot.data.redis
+    implementation libs.spring.cloud.openfeign
+
+    implementation libs.mysql, libs.druid, libs.pool
+}
+
+application {
+    mainClass = "${group}.${name}.Main"
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': "${group}.${name}.Main"
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

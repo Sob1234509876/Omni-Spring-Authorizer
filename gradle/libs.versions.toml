@@ -1,0 +1,25 @@
+[versions]
+spring-boot-web-v = "3.4.2"
+spring-boot-data-jdbc-v = "3.4.2"
+spring-boot-data-redis-v = "3.4.2"
+
+spring-cloud-openfeign-v = "4.2.0"
+
+junit-jupiter-v = "5.11.1"
+
+druid-v = "1.2.9"
+pool-v = "2.12.1"
+mysql-v = "8.0.33"
+
+[libraries]
+spring-boot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot-web-v" }
+spring-boot-data-jdbc = { module = "org.springframework.boot:spring-boot-starter-data-jdbc", version.ref = "spring-boot-data-jdbc-v" }
+spring-boot-data-redis = { module = "org.springframework.boot:spring-boot-starter-data-redis", version.ref = "spring-boot-data-redis-v" }
+
+spring-cloud-openfeign = { module = "org.springframework.cloud:spring-cloud-starter-openfeign", version.ref = "spring-cloud-openfeign-v" }
+
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-v" }
+
+druid = { module = "com.alibaba:druid", version.ref = "druid-v" }
+pool = { module = "org.apache.commons:commons-pool2", version.ref = "pool-v" }
+mysql = { module = "com.mysql:mysql-connector-j", version.ref = "mysql-v" }
