@@ -1,4 +1,4 @@
-package top.sob.xxx.spring.controller;
+package top.sob.auth.spring.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,15 +6,15 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.sob.xxx.spring.configuration.XXXServiceConfiguration;
-import top.sob.xxx.spring.service.XXXService;
+import top.sob.auth.spring.configuration.AuthorizerServiceConfiguration;
+import top.sob.auth.spring.service.AuthorizerService;
 
 @SpringBootApplication
 @EnableFeignClients
 @RestController
-@Import(XXXServiceConfiguration.class)
+@Import(AuthorizerServiceConfiguration.class)
 @RequestMapping("/api/xxx")
-public class XXXController {
+public class AuthorizerController {
     @Autowired
-    XXXService service;
+    AuthorizerService service;
 }

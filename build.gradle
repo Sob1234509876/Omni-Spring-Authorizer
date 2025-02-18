@@ -7,7 +7,7 @@ plugins {
     id 'org.springframework.boot' version '3.4.2'
 }
 
-group = 'top.sob'
+group = 'top.sob.auth'
 version = '1.0a'
 
 repositories {
@@ -26,12 +26,12 @@ dependencies {
 }
 
 application {
-    mainClass = "${group}.${name}.Main"
+    mainClass = 'top.sob.auth.Main'
 }
 
 jar {
     manifest {
-        attributes 'Main-Class': "${group}.${name}.Main"
+        attributes 'Main-Class': 'top.sob.auth.Main'
     }
 }
 
@@ -41,8 +41,12 @@ test {
 
 publishing {
     publications {
-        xxx(MavenPublication) {
+        Authorizer(MavenPublication) {
             from components.java
+
+            groupId = 'top.sob'
+            artifactId = 'auth'
+            version = '1.0a'
         }
     }
 }
