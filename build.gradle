@@ -38,3 +38,11 @@ jar {
 test {
     useJUnitPlatform()
 }
+
+publishing {
+    publications {
+        xxx(MavenPublication) {
+            from components.java
+        }
+    }
+}
