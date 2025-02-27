@@ -7,6 +7,7 @@ spring-cloud-openfeign-v = "4.2.0"
 
 junit-jupiter-v = "5.11.1"
 
+lombok-v = "1.18.36"
 druid-v = "1.2.9"
 pool-v = "2.12.1"
 mysql-v = "8.0.33"
@@ -20,6 +21,7 @@ spring-cloud-openfeign = { module = "org.springframework.cloud:spring-cloud-star
 
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-v" }
 
+lombok = {module = "org.projectlombok:lombok", version.ref = "lombok-v"}
 druid = { module = "com.alibaba:druid", version.ref = "druid-v" }
 pool = { module = "org.apache.commons:commons-pool2", version.ref = "pool-v" }
 mysql = { module = "com.mysql:mysql-connector-j", version.ref = "mysql-v" }

@@ -22,7 +22,8 @@ dependencies {
     implementation libs.spring.boot.web, libs.spring.boot.data.jdbc, libs.spring.boot.data.redis
     implementation libs.spring.cloud.openfeign
 
-    implementation libs.mysql, libs.druid, libs.pool
+    implementation libs.mysql, libs.druid, libs.pool, libs.lombok
+    annotationProcessor libs.lombok
 }
 
 application {
