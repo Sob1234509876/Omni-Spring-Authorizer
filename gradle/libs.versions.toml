@@ -3,6 +3,7 @@ spring-boot-web-v = "3.4.2"
 spring-boot-data-jdbc-v = "3.4.2"
 spring-boot-data-redis-v = "3.4.2"
 
+spring-mybatis-v = "3.0.4"
 spring-cloud-openfeign-v = "4.2.0"
 
 junit-jupiter-v = "5.11.1"
@@ -12,16 +13,20 @@ druid-v = "1.2.9"
 pool-v = "2.12.1"
 mysql-v = "8.0.33"
 
+jannotations-v = "24.0.0"
 [libraries]
 spring-boot-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot-web-v" }
 spring-boot-data-jdbc = { module = "org.springframework.boot:spring-boot-starter-data-jdbc", version.ref = "spring-boot-data-jdbc-v" }
 spring-boot-data-redis = { module = "org.springframework.boot:spring-boot-starter-data-redis", version.ref = "spring-boot-data-redis-v" }
 
+spring-mybatis = { module = "org.mybatis.spring.boot:mybatis-spring-boot-starter", version.ref = "spring-mybatis-v" }
 spring-cloud-openfeign = { module = "org.springframework.cloud:spring-cloud-starter-openfeign", version.ref = "spring-cloud-openfeign-v" }
 
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-v" }
 
-lombok = {module = "org.projectlombok:lombok", version.ref = "lombok-v"}
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok-v" }
 druid = { module = "com.alibaba:druid", version.ref = "druid-v" }
 pool = { module = "org.apache.commons:commons-pool2", version.ref = "pool-v" }
 mysql = { module = "com.mysql:mysql-connector-j", version.ref = "mysql-v" }
+
+jannotations = { module = "org.jetbrains:annotations", version.ref = "jannotations-v" }

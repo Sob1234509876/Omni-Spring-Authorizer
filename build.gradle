@@ -20,9 +20,12 @@ dependencies {
     testImplementation libs.junit.jupiter
 
     implementation libs.spring.boot.web, libs.spring.boot.data.jdbc, libs.spring.boot.data.redis
-    implementation libs.spring.cloud.openfeign
+    implementation libs.spring.mybatis, libs.spring.cloud.openfeign
 
     implementation libs.mysql, libs.druid, libs.pool, libs.lombok
+
+    implementation libs.jannotations
+
     annotationProcessor libs.lombok
 }
 
