@@ -17,7 +17,7 @@ public interface UserDao {
     @Select("SELECT * FROM `auth_db`.`users` WHERE `username` LIKE CONCAT('%', #{name}, '%')")
     List<User> searchByName(String name);
 
-    @Insert("INSERT INTO `auth_db`.`users` (`id`, `username`, `password`) VALUES (#{id}, #{username}, #{password})")
+    @Insert("INSERT INTO `auth_db`.`users` (`id`, `username`, `password`, `cts`) VALUES (#{id}, #{username}, #{password}, #{cts})")
     void put(User user);
 
     @Select("SELECT EXISTS(SELECT * FROM `auth_db`.`users` WHERE `username` = #{name} AND `password` = #{password})")
@@ -26,6 +26,13 @@ public interface UserDao {
     @Select("SELECT EXISTS(SELECT * FROM `auth_db`.`users` WHERE `username` = #{name})")
     boolean exists(String name);
 
-    @Select("SELECT COUNT(*) FROM `auth_db`.`users`")
-    int size();
+    @Select("SELECT MAX(`id`) FROM `auth_db`.`users`")
+    List<Long> maxIdLst();
+
+    default long getNextId() {
+        var m = maxIdLst();
+        if (m.isEmpty() || m.get(0) == null)
+            return 0;
+        return m.get(0) + 1;
+    }
 }

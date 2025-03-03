@@ -6,7 +6,8 @@ import top.sob.auth.test.spring.controller.TestController;
 
 public class TestMain {
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
         SpringApplication.run(TestController.class);
+        Thread.sleep(20000);
     }
 }

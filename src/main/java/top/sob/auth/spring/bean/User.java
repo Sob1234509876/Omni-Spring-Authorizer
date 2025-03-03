@@ -13,4 +13,6 @@ public class User {
     String username;
 
     String password;
+
+    long cts;
 }

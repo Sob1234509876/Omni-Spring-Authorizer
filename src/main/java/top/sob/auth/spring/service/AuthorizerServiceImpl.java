@@ -24,8 +24,8 @@ public class AuthorizerServiceImpl implements AuthorizerService {
         if (user.exists(username))
             return -1;
 
-        var id = user.size();
-        var u = new User(id, username, password);
+        var id = user.getNextId();
+        var u = new User(id, username, password, System.currentTimeMillis());
 
         user.put(u);
         loginCache.setLogin(request.getRemoteAddr(), id);
