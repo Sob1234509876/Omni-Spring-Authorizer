@@ -1,10 +1,10 @@
 package top.sob.auth;
 
 import org.springframework.boot.SpringApplication;
-import top.sob.auth.spring.controller.AuthorizerController;
+import top.sob.auth.spring.configuration.AuthorizerConfiguration;
 
 public final class Main {
     public static void main(String[] args) {
-        SpringApplication.run(AuthorizerController.class, args);
+        SpringApplication.run(AuthorizerConfiguration.class, args);
     }
 }

@@ -1,6 +1,11 @@
 package top.sob.auth.spring.service;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import top.sob.auth.spring.bean.User;
 import top.sob.auth.spring.dao.jdbc.UserDao;
@@ -8,16 +13,22 @@ import top.sob.auth.spring.dao.redis.LoginCacheDao;
 
 import java.util.List;
 
+@Data
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class AuthorizerServiceImpl implements AuthorizerService {
 
-    @Autowired
+    @NonNull
     UserDao user;
 
-    @Autowired
+    @NonNull
     LoginCacheDao loginCache;
 
     @Autowired
     HttpServletRequest request;
+
+    @Autowired
+    HttpServletResponse response;
 
     @Override
     public long register(String username, String password) {
@@ -58,7 +69,11 @@ public class AuthorizerServiceImpl implements AuthorizerService {
     @Override
     public User getUser(long id) {
         var u = user.getById(id);
-        u.setPassword(null);
+        if (u == null)
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        else
+            u.setPassword(null);
+
         return u;
     }
 

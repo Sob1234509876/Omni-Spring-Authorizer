@@ -8,7 +8,7 @@ plugins {
 }
 
 group = 'top.sob.auth'
-version = '1.0.1a'
+version = '1.0.2a'
 
 repositories {
     maven { url = uri('https://maven.aliyun.com/repository/central') }
@@ -50,7 +50,7 @@ publishing {
 
             groupId = 'top.sob'
             artifactId = 'auth'
-            version = '1.0.1a'
+            version = '1.0.2a'
         }
     }
 }

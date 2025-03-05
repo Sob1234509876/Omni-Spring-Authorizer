@@ -27,12 +27,12 @@ public interface UserDao {
     boolean exists(String name);
 
     @Select("SELECT MAX(`id`) FROM `auth_db`.`users`")
-    List<Long> maxIdLst();
+    List<Long> maxId();
 
     default long getNextId() {
-        var m = maxIdLst();
-        if (m.isEmpty() || m.get(0) == null)
+        var id = maxId();
+        if (id.isEmpty() || id.get(0) == null)
             return 0;
-        return m.get(0) + 1;
+        return id.get(0) + 1;
     }
 }
